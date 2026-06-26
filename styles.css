@@ -268,6 +268,7 @@ nav ul a:hover::after { width: 100%; }
    ========================================= */
 #steps {
     padding: 4rem 5%;
+    display: flex;
     background: var(--bg-white);
     text-align: center;
     border-top: 1px solid #eee;
@@ -281,7 +282,6 @@ nav ul a:hover::after { width: 100%; }
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     margin: 0 auto 2rem auto;
-    display: block;
     background-color: #000; 
 }
 
@@ -289,7 +289,6 @@ nav ul a:hover::after { width: 100%; }
     width: 100%;
     max-width: 640px; 
     margin: 0 auto;
-    display: block;
     padding: 0.5rem;
     background: var(--bg-light); 
     border-radius: var(--radius);
