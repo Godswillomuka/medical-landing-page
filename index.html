@@ -174,13 +174,13 @@
         </section>
 
         <!-- steps section -->
-         <section>
+         <section id="steps">
             <video loop muted controls width="640" height="360">
-                <source src="videos/steps.mp4" type="video/mp4">
+                <source src="videos/health.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <audio loop controls>
-                <source src="audio/steps.mp3" type="audio/mpeg">
+                <source src="audio/health.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
          </section>
@@ -262,7 +262,8 @@
             </div>
             
             <div>
-                <form>
+                <!-- Added action and method attributes for form submission -->
+                <form action="/submit-contact" method="POST">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="John Doe" required>
 
