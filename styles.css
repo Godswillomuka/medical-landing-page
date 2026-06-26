@@ -5,6 +5,8 @@
     --primary: #007bff;
     --primary-dark: #0056b3;
     --accent: #28a745;
+    --danger: #dc3545;
+    --danger-dark: #c82333;
     --text-dark: #212529;
     --text-light: #6c757d;
     --bg-light: #f8f9fa;
@@ -29,24 +31,41 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
+/* =========================================
+   2. TOP BAR
+   ========================================= */
+#top-bar {
+    background-color: var(--text-dark);
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0.6rem 5%;
+    font-size: 0.85rem;
+}
+
+#top-bar p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* =========================================
+   3. NAVIGATION
+   ========================================= */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* =========================================
-   2. NAVIGATION (Reverted to Blue, Modernized)
-   ========================================= */
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    /* Modern blue gradient instead of flat blue */
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -80,9 +99,8 @@ nav ul a::after {
 }
 nav ul a:hover::after { width: 100%; }
 
-
 /* =========================================
-   3. HERO SECTION
+   4. HERO SECTION
    ========================================= */
 #home {
     display: flex;
@@ -115,9 +133,42 @@ nav ul a:hover::after { width: 100%; }
     box-shadow: var(--shadow-hover);
 }
 
+/* =========================================
+   5. EMERGENCY SECTION
+   ========================================= */
+#emergency {
+    background: linear-gradient(135deg, var(--danger) 0%, var(--danger-dark) 100%);
+    color: white;
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+#emergency h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+#emergency p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.95;
+}
+
+#emergency .btn-primary {
+    background: white;
+    color: var(--danger);
+    border: 2px solid white;
+}
+
+#emergency .btn-primary:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-2px);
+}
 
 /* =========================================
-   4. BUTTONS
+   6. BUTTONS
    ========================================= */
 .btn {
     display: inline-block;
@@ -135,9 +186,8 @@ nav ul a:hover::after { width: 100%; }
 .btn-secondary { border-color: var(--primary); color: var(--primary); margin-left: 1rem; }
 .btn-secondary:hover { background: var(--primary); color: white; transform: translateY(-2px); }
 
-
 /* =========================================
-   5. STATS SECTION
+   7. STATS SECTION
    ========================================= */
 #stats {
     display: flex;
@@ -153,9 +203,8 @@ nav ul a:hover::after { width: 100%; }
 #stats h3 { color: var(--primary); font-size: 2.5rem; margin-bottom: 0.5rem; }
 #stats p { color: var(--text-light); font-weight: 500; }
 
-
 /* =========================================
-   6. SERVICES SECTION (Image Background + Overlay)
+   8. SERVICES SECTION
    ========================================= */
 #services {
     padding: 5rem 5%;
@@ -171,14 +220,13 @@ nav ul a:hover::after { width: 100%; }
     gap: 2rem;
 }
 
-/* The Card Container */
 .service-cards article {
     position: relative;
     overflow: hidden;
-    height: 380px; /* Fixed height for the image background */
+    height: 380px; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Pushes text to the bottom */
+    justify-content: flex-end; 
     padding: 2rem;
     color: white;
     border-radius: var(--radius);
@@ -186,7 +234,6 @@ nav ul a:hover::after { width: 100%; }
     transition: var(--transition);
 }
 
-/* The Image fills the whole card */
 .service-cards article img {
     position: absolute;
     top: 0; left: 0;
@@ -196,7 +243,6 @@ nav ul a:hover::after { width: 100%; }
     transition: transform 0.5s ease;
 }
 
-/* The "Glitter/Filtering" Dark Overlay for text readability */
 .service-cards article::before {
     content: "";
     position: absolute;
@@ -206,34 +252,69 @@ nav ul a:hover::after { width: 100%; }
     z-index: 2;
 }
 
-/* Hover effect: zooms image slightly */
 .service-cards article:hover img { transform: scale(1.05); }
 .service-cards article:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
 
-/* Ensure text sits above the overlay */
 .service-cards article > * { position: relative; z-index: 3; }
 
-/* Text adjustments for dark background */
 .service-cards article h3 { color: white; font-size: 1.5rem; margin-bottom: 0.5rem; }
 .service-cards article p { color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; margin-bottom: 1rem; }
 .service-cards article ul { padding: 0; }
 .service-cards article ul li { color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
 .service-cards article ul li::before { content: "✓"; color: var(--accent); font-weight: bold; }
 
+/* =========================================
+   9. STEPS / MEDIA SECTION
+   ========================================= */
+#steps {
+    padding: 4rem 5%;
+    background: var(--bg-white);
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+#steps video {
+    max-width: 100%;
+    width: 640px; 
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin: 0 auto 2rem auto;
+    display: block;
+    background-color: #000; 
+}
+
+#steps audio {
+    width: 100%;
+    max-width: 640px; 
+    margin: 0 auto;
+    display: block;
+    padding: 0.5rem;
+    background: var(--bg-light); 
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
 
 /* =========================================
-   7. ABOUT SECTION (Shorter Height)
+   10. ABOUT SECTION
    ========================================= */
 #about {
-    padding: 3rem 5%; /* Reduced padding */
+    padding: 4rem 5%; 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
     background: var(--bg-light);
 }
 
-#about h2 { grid-column: 2; grid-row: 1; font-size: 2.2rem; margin-bottom: 1rem; text-align: left; }
+#about h2 { 
+    grid-column: 2; 
+    grid-row: 1; 
+    font-size: 2.2rem; 
+    margin-bottom: 1rem; 
+    text-align: left; 
+}
 
 #about img {
     grid-column: 1;
@@ -241,33 +322,37 @@ nav ul a:hover::after { width: 100%; }
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     width: 100%;
-    max-height: 350px; /* Constrains the height so it isn't too big */
+    max-height: 400px; 
     object-fit: cover;
 }
 
-#about p { grid-column: 2; text-align: left; color: var(--text-light); margin-bottom: 1rem; }
-
+#about p { 
+    grid-column: 2; 
+    text-align: left; 
+    color: var(--text-light); 
+    margin-bottom: 1rem; 
+}
 
 /* =========================================
-   8. TESTIMONIALS SECTION (Flexbox Layout)
+   11. TESTIMONIALS SECTION
    ========================================= */
 #testimonials {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 4rem 5%;
+    padding: 5rem 5%;
     background: var(--bg-white);
 }
 
 #testimonials h2 {
-    flex-basis: 100%; /* Forces H2 to take full width */
+    flex-basis: 100%; 
     text-align: center;
-    margin: 0;
+    margin: 0 0 1rem 0;
     font-size: 2.2rem;
 }
 
 #testimonials > div {
-    flex: 1 1 300px; /* Makes them sit side-by-side */
+    flex: 1 1 300px; 
     background: var(--bg-light);
     padding: 2rem;
     border-radius: var(--radius);
@@ -276,31 +361,126 @@ nav ul a:hover::after { width: 100%; }
     box-shadow: var(--shadow);
 }
 
-#testimonials blockquote { font-style: italic; color: var(--text-dark); margin-bottom: 1rem; line-height: 1.6; }
-#testimonials cite { color: var(--primary); font-weight: 600; font-style: normal; }
-
+#testimonials blockquote { 
+    font-style: italic; 
+    color: var(--text-dark); 
+    margin-bottom: 1rem; 
+    line-height: 1.6; 
+}
+#testimonials cite { 
+    color: var(--primary); 
+    font-weight: 600; 
+    font-style: normal; 
+}
 
 /* =========================================
-   9. CONTACT SECTION (Compact Form)
+   12. WHY CHOOSE US SECTION
+   ========================================= */
+#why-us {
+    padding: 5rem 5%;
+    text-align: center;
+    background: var(--bg-white);
+    border-top: 1px solid #eee;
+}
+
+#why-us h2 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+}
+
+.why-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.why-cards > div {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+}
+
+.why-cards > div:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-top-color: var(--accent);
+}
+
+.why-cards h3 {
+    color: var(--primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.why-cards p {
+    color: var(--text-light);
+}
+
+/* =========================================
+   13. FAQ SECTION
+   ========================================= */
+#faq {
+    padding: 5rem 5%;
+    background: var(--bg-light);
+}
+
+#faq h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+}
+
+.faq-item {
+    background: var(--bg-white);
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent);
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* =========================================
+   14. CONTACT SECTION
    ========================================= */
 #contact {
-    padding: 4rem 5%;
+    padding: 5rem 5%;
     display: flex;
     gap: 4rem;
-    background: var(--bg-light);
+    background: var(--bg-white);
+    border-top: 1px solid #eee;
 }
 
 #contact > div { flex: 1; }
 #contact h2 { font-size: 2.2rem; margin-bottom: 1.5rem; }
 #contact p { color: var(--text-light); margin-bottom: 1.5rem; }
-#contact ul li { margin-bottom: 1rem; color: var(--text-dark); font-weight: 500; }
+#contact ul li { margin-bottom: 1rem; color: var(--text-dark); font-weight: 500; display: flex; align-items: center; gap: 0.5rem;}
 
 form { display: flex; flex-direction: column; gap: 0.8rem; }
 label { font-weight: 600; font-size: 0.9rem; color: var(--text-dark); }
 
-/* Compact inputs */
 input, textarea {
-    padding: 0.6rem 0.8rem; /* Reduced padding */
+    padding: 0.8rem 1rem; 
     border: 1px solid #ddd;
     border-radius: var(--radius);
     font-family: inherit;
@@ -310,13 +490,17 @@ input, textarea {
 
 textarea {
     resize: vertical;
-    min-height: 80px; /* Restricts height so it isn't too long */
+    min-height: 120px; 
 }
 
-input:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); }
+input:focus, textarea:focus { 
+    outline: none; 
+    border-color: var(--primary); 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); 
+}
 
 button {
-    padding: 0.7rem;
+    padding: 0.8rem;
     border: none;
     background: var(--primary);
     color: white;
@@ -328,77 +512,80 @@ button {
 }
 button:hover { background: var(--primary-dark); }
 
-
 /* =========================================
-   10. FOOTER
+   15. FOOTER
    ========================================= */
-footer { text-align: center; padding: 2rem; background: var(--text-dark); color: white; }
+footer { 
+    text-align: center; 
+    padding: 2rem; 
+    background: var(--text-dark); 
+    color: white; 
+}
 footer p { margin-bottom: 0.5rem; color: #ccc; }
 footer p:last-child { font-size: 0.9rem; color: #888; }
 
-
 /* =========================================
-   11. RESPONSIVE DESIGN (MOBILE)
+   16. RESPONSIVE DESIGN (MOBILE)
    ========================================= */
 @media (max-width: 768px) {
+    /* Top Bar */
+    #top-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    /* Nav */
     nav { flex-direction: column; gap: 1rem; padding: 1rem; }
     nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
     
-    #home, #about, #contact { 
+    /* Hero */
+    #home { 
         flex-direction: column; 
-        grid-template-columns: 1fr; 
         text-align: center; 
+        padding: 3rem 5%;
+        min-height: auto;
     }
-    
-    #about h2, #about p, #about img { grid-column: 1; grid-row: auto; text-align: center; }
-    #about img { max-height: 250px; }
-
     #home h1 { font-size: 2rem; }
+    #home p { margin-inline: auto; }
     .btn-secondary { margin-left: 0; margin-top: 1rem; }
     
-    #stats { flex-direction: column; gap: 2rem; }
+    /* Emergency */
+    #emergency { padding: 3rem 5%; }
+    #emergency h2 { font-size: 1.8rem; }
+
+    /* Stats */
+    #stats { flex-direction: column; gap: 2rem; padding: 3rem 5%; }
+    
+    /* Services */
     .service-cards { grid-template-columns: 1fr; }
-    .service-cards article { height: 300px; }
-}
+    .service-cards article { height: 350px; }
 
-#steps {
-    padding: 3rem 5%;;
-    background: var(--bg-white);
-    text-align: center;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
+    /* Media */
+    #steps video, #steps audio { width: 100%; max-width: 100%; }
 
-/* Video Styling */
-#steps video {
-    max-width: 100%;
-    width: 640px; /* Keeps it at your specified width on desktop */
-    height: auto;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin: 0 auto 2rem auto;
-    background-color: #000; /* Black background while video loads */
-}
+    /* About */
+    #about { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        padding: 3rem 5%;
+    }
+    #about h2, #about p { grid-column: 1; grid-row: auto; text-align: center; }
+    #about img { grid-column: 1; grid-row: auto; max-height: 250px; margin-bottom: 1rem; }
 
-/* Audio Styling */
-#steps audio {
-    width: 100%;
-    max-width: 640px; /* Matches video width */
-    margin: 0 auto;
-    padding: 0.5rem;
-    background: var(--bg-light); /* Gives the audio player a nice background */
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
+    /* Testimonials */
+    #testimonials { padding: 3rem 5%; }
 
-/* Responsive adjustments for media */
-@media (max-width: 768px) {
-    #steps video, 
-    #steps audio {
-        width: 100%;
-        max-width: 100%;
+    /* Why Us */
+    .why-cards { grid-template-columns: 1fr; }
+
+    /* FAQ */
+    .faq-item { padding: 1.2rem 1.5rem; }
+
+    /* Contact */
+    #contact { 
+        flex-direction: column; 
+        padding: 3rem 5%;
     }
 }
