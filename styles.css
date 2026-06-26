@@ -362,11 +362,14 @@ footer p:last-child { font-size: 0.9rem; color: #888; }
 }
 
 #steps {
-    padding: 4rem 5%;
+    padding: 3rem 5%;;
     background: var(--bg-white);
     text-align: center;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 /* Video Styling */
@@ -377,7 +380,6 @@ footer p:last-child { font-size: 0.9rem; color: #888; }
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     margin: 0 auto 2rem auto;
-    display: block;
     background-color: #000; /* Black background while video loads */
 }
 
@@ -386,7 +388,6 @@ footer p:last-child { font-size: 0.9rem; color: #888; }
     width: 100%;
     max-width: 640px; /* Matches video width */
     margin: 0 auto;
-    display: block;
     padding: 0.5rem;
     background: var(--bg-light); /* Gives the audio player a nice background */
     border-radius: var(--radius);
