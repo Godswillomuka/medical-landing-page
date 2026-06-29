@@ -99,3 +99,15 @@ nav ul a::after {
 }
 nav ul a:hover::after { width: 100%; }
 
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 5%;
+    gap: 4rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    min-height: 80vh;
+}
