@@ -111,3 +111,25 @@ nav ul a:hover::after { width: 100%; }
     background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
     min-height: 80vh;
 }
+
+#home > div { flex: 1; }
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+#home p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+#home img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-hover);
+}
+
