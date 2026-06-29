@@ -26,3 +26,52 @@ body {
     color: var(--text-dark);
     background-color: var(--bg-white);
 }
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* =========================================
+   2. TOP BAR
+   ========================================= */
+#top-bar {
+    background-color: var(--text-dark);
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0.6rem 5%;
+    font-size: 0.85rem;
+}
+
+#top-bar p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* =========================================
+   3. NAVIGATION
+   ========================================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav > a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
